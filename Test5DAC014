@@ -1,0 +1,101 @@
+package Test5;
+import java.util.Scanner;
+public class Ques1 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String arr[] = {"Car", "Truck"};
+        String para = sc.nextLine().toLowerCase();
+        sc.close();
+        for (String word : arr) {
+            String lowerWord = word.toLowerCase();
+            int count = 0;
+            int index = 0;
+            while ((index = para.indexOf(lowerWord, index)) != -1) {
+                count++;
+                index = index + lowerWord.length();
+            }
+            System.out.println(word + " occurred " + count + " time(s)");
+        }
+        
+    }
+}
+package Test5;
+
+import java.util.Scanner;
+
+public class Ques2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String line=sc.nextLine();
+		String s= sc.next();
+		sc.close();
+        int count = 0;
+        int index = 0;
+        while ((index = line.indexOf(s, index)) != -1) {
+            count++;
+            index = index + s.length();
+        }
+        System.out.println(s + " occurred " + count + " time(s)");
+	}
+}
+package Test5;
+
+import java.util.Scanner;
+
+public class ques3 {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		String name= sc.next().toUpperCase();
+		sc.close();
+		boolean ispali=true;
+		int start=0;
+		int end=name.length()-1;
+		while(start<end)
+		{
+			if(name.charAt(start)!=name.charAt(end))
+			{
+				ispali=false;
+				break;
+			}
+			start++;
+			end--;
+		}
+		if(ispali)
+		{
+			System.out.println("Its a palindrome");
+		}
+		else
+		{
+			System.out.println("Its not a palindrome");
+		}
+	}
+
+}
+
+package Test5;
+
+import java.util.Scanner;
+//Accept a sentence from user and count total number of words. 
+public class Ques4 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s= sc.nextLine();
+		sc.close();
+		int count=0;
+		for(char ch:s.toCharArray())
+		{
+			count++;
+		}
+		System.out.println(count);
+		int wordcount=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)==' ' ||i==s.length()-1)
+			{
+				wordcount++;
+			}
+		}
+		System.out.println(wordcount);
+	}
+}
