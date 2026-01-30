@@ -1,0 +1,30 @@
+package Test7;
+import java.util.HashSet;
+public class Ques1 {
+public static void Remove_Duplicates(int a[],int n)
+{
+	 int[] result = new int[n];
+	    HashSet<Integer> visited = new HashSet<>();
+	    int front = 0;
+	    int back = n - 1;
+	    for (int i = 0; i < n; i++) {
+	        if (!visited.contains(a[i])) {
+	            visited.add(a[i]);
+	            result[front++] = a[i];
+	        } else {
+	            result[back--] = a[i];
+	        }
+	    }
+	    for (int i = 0; i < n; i++) {
+	        a[i] = result[i];
+	    }
+	    System.out.print("Revised Array: ");
+	    for (int x : a) {
+	        System.out.print(x + " ");
+	    }
+}
+	public static void main(String[] args) {
+		int a[]= {58,26,91,26,70,70,91,58,58,58,66};
+		Remove_Duplicates(a,11);
+	}
+}
