@@ -1,0 +1,14 @@
+package Test6;
+import java.util.Map;
+import java.util.HashMap;
+public class Ques1 {
+	public static void main(String[] args) {
+		String[] arr= {"A","B","C", "D", "E", "F", "F", "G", "A"};
+		Map<String, Integer> freq = new HashMap<>();
+		    for (String s : arr) {
+	            freq.put(s, freq.getOrDefault(s, 0) + 1);
+	        }
+		    int count= freq.getOrDefault("A", 0);
+		System.out.println(count);
+	}
+}
